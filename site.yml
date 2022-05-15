@@ -1,0 +1,16 @@
+---
+# main task for role execution
+- name:
+  hosts: all
+  gather_facts: true
+  become: true
+  
+  roles:
+    - role_name
+  
+  tasks:
+  
+  - name: task 1
+    include_role:
+      name: role_name
+    when: condition

@@ -1,16 +1,28 @@
 ---
 # main task for role execution
-- name:
-  hosts: all
+- name: configure inventory hosts
+  hosts: localhost
+  gather_facts: no
+  
+  vars:
+    linux_hosts: "{{ survey_hosts.split('\n') }}"  
+  
+  tasks:
+    
+  - name: make host group from survey hosts list
+    add_host:
+      hostname: "{{ item }}"
+      groupname: new_group      
+    loop: "{{ linux_hosts }}"
+
+- name: configure automount shares on hosts
+  hosts: new_group,!localhost
   gather_facts: true
   become: true
   
-  roles:
-    - role_name
-  
   tasks:
   
-  - name: task 1
+  - name: <role_function>
     include_role:
-      name: role_name
-    when: condition
+      name: <role_name>
+    when: <condition>

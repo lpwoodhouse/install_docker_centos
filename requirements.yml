@@ -1,0 +1,7 @@
+---
+collections:
+  - community.general
+  - ansble.posix
+
+roles:
+  - <galaxy_role>

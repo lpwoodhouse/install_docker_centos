@@ -22,6 +22,10 @@
   
   tasks:
   
+  - name: install docker
+    include_role:
+      name: geerlingguy.docker
+
   - name: install portainer
     include_role:
       name: install_portainer

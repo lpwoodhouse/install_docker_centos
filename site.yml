@@ -15,14 +15,13 @@
       groupname: new_group      
     loop: "{{ linux_hosts }}"
 
-- name: configure automount shares on hosts
+- name: configure portainer on host
   hosts: new_group,!localhost
   gather_facts: true
   become: true
   
   tasks:
   
-  - name: <role_function>
+  - name: install portainer
     include_role:
-      name: <role_name>
-    when: <condition>
+      name: install_portainer

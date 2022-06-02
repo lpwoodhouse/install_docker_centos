@@ -1,5 +1,18 @@
 ---
 
+- name: ensure docker module requirements
+  block:
+
+  - name: install python3-pip
+    package:
+      name: python3-pip
+      state: present
+  - name: install docker sdk for python
+    shell: >
+      pip install docker
+    args:
+      warn: false
+
 - name: log into dockerhub
   docker_login:
     username: "{{ dockerhub_user }}"
@@ -25,15 +38,3 @@
 
 - debug:
     msg: "{{ portainer_status }}"
-
-- name: install watchtower container
-  shell: >
-    docker run -d \
-    --name watchtower \
-    --restart=always \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    containerrr/watchtower
-  register: watchtower_status
-
-- debug:
-    msg: "{{ watchtower_status }}"

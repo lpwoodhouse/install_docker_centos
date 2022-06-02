@@ -24,8 +24,8 @@
 - name: install watchtower container
   shell: >
     docker run -d \
-    -- name watchtower \
-    -- restart=always \
+    --name watchtower \
+    --restart=always \
     -v /var/run/docker.sock:/var/run/docker.sock \
     containerrr/watchtower
   register: watchtower_status

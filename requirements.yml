@@ -1,4 +1,2 @@
 ---
-
-roles:
-  - src: geerlingguy.docker
+geerlingguy.docker

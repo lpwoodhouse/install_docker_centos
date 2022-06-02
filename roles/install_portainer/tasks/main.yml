@@ -1,18 +1,34 @@
 ---
 
-- name: create docker volume for portainer data
+- name: create portainer_data volume
   shell: >
     docker volume create portainer_data
 
-- name: install portainer server container
+- name: install portainer container
   shell: >
-    docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
+    docker run -d \
+    --name portainer \
     --restart=always \
-    --privileged
+    --privileged \
+    -p 8000:8000 \
+    -p 9000:9000 \
+    -p 9443:9443 \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v portainer_data:/data \
     portainer/portainer-ce:latest
-  register: status
+  register: portainer_status
 
 - debug:
-    msg: "{{ status }}"
+    msg: "{{ portainer_status }}"
+
+- name: install watchtower container
+  shell: >
+    docker run -d \
+    -- name watchtower \
+    -- restart=always \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    containerrr/watchtower
+  register: watchtower_status
+
+- debug:
+    msg: "{{ watchtower_status }}"

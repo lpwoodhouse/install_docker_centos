@@ -1,5 +1,10 @@
 ---
 
+- name: log into dockerhub
+  docker_login:
+    username: "{{ dockerhub_user }}"
+    password: "{{ dockerhub_pass }}"
+
 - name: create portainer_data volume
   shell: >
     docker volume create portainer_data

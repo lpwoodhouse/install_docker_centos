@@ -24,7 +24,7 @@
   
   - name: install docker
     include_role:
-      name: geerlingguy.docker
+      name: docker
 
   - name: install portainer
     include_role:

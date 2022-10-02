@@ -2,7 +2,7 @@
 
 - name: update installed packages via yum
   yum:
-    name: "'*"
+    name: "*"
     state: latest
 
 - name: add docker-ce repository

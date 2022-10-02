@@ -9,7 +9,7 @@
       state: present
   - name: install docker sdk for python
     shell: >
-      pip install docker
+      pip3 install docker
     args:
       warn: false
 

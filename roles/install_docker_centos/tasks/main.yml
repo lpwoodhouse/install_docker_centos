@@ -27,4 +27,4 @@
   service:
     name: docker
     enabled: yes
-    started: yes
+    status: started

@@ -10,4 +10,4 @@ docker_packages:
   - docker-compose-plugin
 
 docker_users:
- - "{{ ansible_user }}"
+  - ansible

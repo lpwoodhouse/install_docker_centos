@@ -2,7 +2,7 @@
 # main task for role execution
 - name: configure inventory hosts
   hosts: localhost
-  gather_facts: no
+  gather_facts: false
   
   vars:
     linux_hosts: "{{ survey_hosts.split('\n') }}"  
@@ -15,17 +15,21 @@
       groupname: new_group      
     loop: "{{ linux_hosts }}"
 
-- name: configure portainer on host
+- name: install docker on centos host
   hosts: new_group,!localhost
   gather_facts: true
   become: true
+
+  vars:
+    include_portainer: true
   
   tasks:
   
   - name: install docker
     include_role:
-      name: docker
+      name: install_docker_centos
 
   - name: install portainer
     include_role:
       name: install_portainer
+    when: include_portainer|bool

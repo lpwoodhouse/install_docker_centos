@@ -1,0 +1,31 @@
+---
+
+- name: update installed packages via yum
+  yum:
+    name: "'*"
+    state: latest
+
+- name: add docker-ce repository
+  yum-repostitory:
+    name: docker
+    description: docker-ce yum repo
+    baseurl: "{{ centos_baseurl }}"
+    gpgcheck: no
+
+- name: install docker packages
+  package:
+    name: "{{ docker_packages | join(',') }}"
+    state: present
+
+- name: add users to docker group
+  user:
+    name: "{{ item }}"
+    groups: docker
+    append: yes
+  loop: "{{ docker_users }}"
+
+- name: enable docker service
+  service:
+    name: docker
+    enabled: yes
+    started: yes

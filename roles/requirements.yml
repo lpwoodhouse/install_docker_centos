@@ -1,5 +1,0 @@
----
-roles:
-  - src: geerlingguy.docker
-    name: docker
-    version: 5.0.0

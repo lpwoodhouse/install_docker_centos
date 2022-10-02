@@ -6,7 +6,7 @@
     state: latest
 
 - name: add docker-ce repository
-  yum-repostitory:
+  yum_repostitory:
     name: docker
     description: docker-ce yum repo
     baseurl: "{{ centos_baseurl }}"

@@ -4,7 +4,7 @@
   block:
 
   - set_fact: 
-      default_python_interpreter: /usr/bin/python3
+      ansible_python_interpreter: /usr/bin/python3
 
   - name: install python3-pip
     package:

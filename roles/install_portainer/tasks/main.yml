@@ -9,6 +9,14 @@
       state: present
   - name: install docker sdk for python
     shell: >
+      pip install docker
+    args:
+      warn: false
+  
+  rescue:
+  
+  - name: install docker sdk for python
+    shell: >
       pip3 install docker
     args:
       warn: false

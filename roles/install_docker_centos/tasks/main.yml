@@ -2,15 +2,14 @@
 
 - name: update installed packages via yum
   yum:
-    name: "*"
+    name: "*, yum-utils"
     state: latest
 
 - name: add docker-ce repository
-  yum_repository:
-    name: docker
-    description: docker-ce yum repo
-    baseurl: "{{ centos_baseurl }}"
-    gpgcheck: no
+  shell: |
+    sudo yum-config-manager \
+    --add-repo \
+    {{ centos_baseurl }}
 
 - name: install docker packages
   package:

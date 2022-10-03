@@ -1,20 +1,32 @@
-# Ansible Role: <role name>
+# Ansible Play: install_docker
 
 ### <sub-heading>
 
-Description here
+This play is for installing docker and portainer on a centos host.<br>
+
 
 ## Requirements
 
-None
+collections:<br>
+  - community.docker
 
 ## Role Variables
 
-Available variables are listed below, along with default values (see ```defaults/main.yml```)
+Default role variables for the install_portainer role are listed below (see ```defaults/main.yml```)
 ```shell
-variable1:
-variable2:
-...etc
+centos_baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-compose-plugin
+docker_users:
+  - ansible
+```
+Default role variables for the install_portainer role are listed below (see ```defaults/main.yml```)
+```shell
+dockerhub_user: <value>
+dockerhub_pass: <value>
 ```
 ## Dependencies
 
@@ -23,8 +35,10 @@ None
 ## Example Playbook
 ```yaml
     - hosts: all
+      become: true
       roles:
-        - <role name>
+        - install_docker_centos
+        - install_portainer
 ```
 
 ## License

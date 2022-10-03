@@ -1,4 +1,4 @@
-# Ansible Play: install_docker
+# Ansible Play: install_docker_centos
 
 ### <sub-heading>
 

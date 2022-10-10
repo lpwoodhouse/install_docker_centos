@@ -1,8 +1,8 @@
 # Install Docker CE and Portainer (CentOS Host Only)
 [![playbook](https://img.shields.io/badge/Ansible-Playbook-blue)](site.yml)
-![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/install_docker_ce)
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/install_docker_ce)
-![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/install_docker_ce)
+![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/install_docker_centos)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/install_docker_centos)
+![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/install_docker_centos)
 [![GitHub](https://img.shields.io/github/license/lpwoodhouse/install_docker_ce)](LICENSE)
 ## Purpose
 

@@ -1,11 +1,12 @@
-# Ansible Playbook: install_docker_centos
-![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/playbook_install_docker_centos)
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/playbook_install_docker_centos)
-![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/playbook_install_docker_centos)
-
+# Install Docker CE and Portainer (CentOS Host Only)
+[![playbook](https://img.shields.io/badge/Ansible-Playbook-blue)](site.yml)
+![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/install_docker_centos)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/install_docker_centos)
+![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/install_docker_centos)
+[![GitHub](https://img.shields.io/github/license/lpwoodhouse/install_docker_centos)](LICENSE)
 ## Purpose
 
-This play is for installing docker and portainer on a centos host.<br>
+This play is for installing docker (community edition) and portainer on a Centos hosts only<br>
 
 ## Requirements
 
@@ -42,10 +43,6 @@ None
         - install_docker_centos
         - install_portainer
 ```
-
-## License
-
-[![GitHub](https://img.shields.io/github/license/lpwoodhouse/playbook_install_docker_centos)](LICENSE)
 
 ## Author Information
 

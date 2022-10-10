@@ -1,4 +1,6 @@
 # Install Docker CE and Portainer (CentOS Host Only)
+![Docker](https://img.shields.io/badge/-Docker-blue?style=flat&logo=docker&logoColor=white)
+![Centos](https://img.shields.io/badge/-CentOS-grey?style=flat&logo=centos)
 [![playbook](https://img.shields.io/badge/Ansible-Playbook-blue)](site.yml)
 ![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/install_docker_centos)
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/install_docker_centos)
